@@ -16,13 +16,16 @@
 ## 📸 Screenshots
 
 ### Homepage
-![Homepage](https://via.placeholder.com/800x400/ff6b35/ffffff?text=Add+your+screenshots+here)
+<img width="1890" height="867" alt="image" src="https://github.com/user-attachments/assets/f5142d85-10a0-4b35-8ebb-65068eed2dcc" />
+
 
 ### Recipe Results
-![Recipe Results](https://via.placeholder.com/800x400/f7931e/ffffff?text=Recipe+Search+Results)
+<img width="1889" height="863" alt="image" src="https://github.com/user-attachments/assets/d3520ec1-28b9-4216-bc87-800c36725683" />
+
 
 ### Recipe Details
-![Recipe Details](https://via.placeholder.com/800x400/ec407a/ffffff?text=Recipe+Detail+View)
+<img width="1883" height="866" alt="image" src="https://github.com/user-attachments/assets/433b1d46-146a-4238-bb11-fe048c131c5f" />
+
 
 ---
 
