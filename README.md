@@ -9,7 +9,7 @@
 
 ## 🌐 Live Demo
 
-👉 **[Try the App Live!](YOUR_DEPLOYED_URL_HERE)**
+👉 **[Try the App Live!](https://smart-receipe-generator-kvz4.onrender.com/)**
 
 ---
 
