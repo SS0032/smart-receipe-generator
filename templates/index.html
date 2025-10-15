@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Recipe Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <span class="chef-icon">👨‍🍳</span>
+                    <h1>Smart Recipe Generator</h1>
+                </div>
+                <p class="tagline">Find perfect recipes based on your ingredients</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Input Section -->
+        <section class="input-section card">
+            <h2>Add Your Ingredients</h2>
+            
+            <!-- Input Mode Toggle -->
+            <div class="input-mode-toggle">
+                <button class="btn-toggle active" id="textModeBtn">
+                    <span>📝</span> Text Input
+                </button>
+                <button class="btn-toggle" id="imageModeBtn">
+                    <span>📷</span> Image Upload
+                </button>
+            </div>
+
+            <!-- Text Input Mode -->
+            <div id="textInputMode">
+                <div class="input-group">
+                    <input type="text" id="ingredientInput" placeholder="Enter ingredient (e.g., chicken, tomatoes)" />
+                    <button class="btn btn-primary" id="addIngredientBtn">Add</button>
+                </div>
+            </div>
+
+            <!-- Image Upload Mode -->
+            <div id="imageUploadMode" style="display: none;">
+                <div class="upload-area" id="uploadArea">
+                    <div id="uploadContent">
+                        <span class="upload-icon">📤</span>
+                        <p>Click to upload ingredient photo</p>
+                        <p class="upload-hint">AI will detect ingredients</p>
+                    </div>
+                    <div id="processingContent" style="display: none;">
+                        <div class="loader"></div>
+                        <p>Processing image...</p>
+                    </div>
+                    <input type="file" id="imageInput" accept="image/*" hidden />
+                </div>
+            </div>
+
+            <!-- Ingredient Tags -->
+            <div class="ingredient-tags" id="ingredientTags"></div>
+
+            <!-- Dietary Preferences -->
+            <div class="preferences-section">
+                <h3>Dietary Preferences</h3>
+                <div class="dietary-buttons">
+                    <button class="btn-dietary" data-pref="vegetarian">Vegetarian</button>
+                    <button class="btn-dietary" data-pref="vegan">Vegan</button>
+                    <button class="btn-dietary" data-pref="gluten-free">Gluten-Free</button>
+                    <button class="btn-dietary" data-pref="non-vegetarian">Non-Vegetarian</button>
+                </div>
+            </div>
+
+            <!-- Filters Toggle -->
+            <button class="btn btn-secondary" id="toggleFiltersBtn">
+                <span>🔍</span> Show Filters
+            </button>
+
+            <!-- Advanced Filters -->
+            <div class="filters-section" id="filtersSection" style="display: none;">
+                <div class="filter-row">
+                    <div class="filter-group">
+                        <label>Difficulty</label>
+                        <select id="difficultyFilter">
+                            <option value="">All Levels</option>
+                            <option value="Easy">Easy</option>
+                            <option value="Medium">Medium</option>
+                            <option value="Hard">Hard</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Max Cooking Time: <span id="timeValue">120</span> min</label>
+                        <input type="range" id="timeFilter" min="10" max="120" value="120" />
+                    </div>
+                </div>
+            </div>
+
+            <!-- Search Button -->
+            <button class="btn btn-search" id="searchBtn" disabled>
+                🔍 Find Recipes (<span id="ingredientCount">0</span> ingredients)
+            </button>
+        </section>
+
+        <!-- Results Section -->
+        <section class="results-section" id="resultsSection" style="display: none;">
+            <h2>Found <span id="resultCount">0</span> Recipes</h2>
+            <div class="recipes-grid" id="recipesGrid"></div>
+        </section>
+
+        <!-- Recipe Detail Modal -->
+        <div class="modal" id="recipeModal" style="display: none;">
+            <div class="modal-content">
+                <button class="modal-close" id="modalClose">&times;</button>
+                <div id="recipeDetail"></div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Smart Recipe Generator | Made with ❤️ for food lovers</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
